@@ -4,21 +4,22 @@
     --cor-primaria: #fff;
     --cor-secundaria: #c0c0c0;
     --cor-botao: #167bf7;
+    --cor-botao-efeito: #3c92fa;
     --cor-fundo: #00030c;
     --fonte-principal: 'Inter';
-}
-
-* {
-    margin: 0;
-    padding: 0;
 }
 
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-primaria);
     font-family: var(--fonte-principal);
-    font-size: 1em;
+    font-size: 16px;
     font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .principal {
@@ -35,24 +36,6 @@ body {
     grid-template-columns: 50% 50%;
 }
 
-.container__caixa {
-    margin: 0em 6em 12em 0em;
-
-}
-
-.container__imagem {
-    width: 40%;
-    margin: 0 0 3em 0;
-}
-
-.container__titulo {
-    font-size: 1.8em;
-    font-weight: 700;
-    padding: 1em;
-    margin: 0 0 0 5.5em;
-    width: 60%;
-}
-
 .container__botao {
     background-color: var(--cor-botao);
     border-radius: 5px;
@@ -60,8 +43,7 @@ body {
     text-decoration: none;
     color: var(--cor-primaria);
     display: block;
-    margin: 0 0 1em 12em;
-    width: 55%;
+    margin-bottom: 1em;
 }
 
 .botao_secundario {
@@ -70,105 +52,165 @@ body {
 }
 
 .container__aviso {
-    font-size: 0.8em;
+    font-size: 12px;
     color: var(--cor-secundaria);
 }
 
+.container__titulo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.container__imagem {
+    margin: 1em 0 2em 0;
+}
+
+.container__caixa {
+    margin: 0em 6em;
+}
+
 .imagem__secundaria {
-    width: 90%;
+    width: 80%;
 }
 
 .secundario {
     align-items: center;
-    margin: 0 20em;
-    height: 70vh;
-}
-
-.container__descricao {
-    margin-top: 0.1em;
-    padding: 0.5em;
-    line-height: 150%;
+    margin: 0 10em;
 }
 
 .descricao__titulo {
     font-weight: 700;
-    font-size: 3em;
-    margin-bottom: 0.5em;
+    font-size: 48px;
+    color: var(--cor-primaria);
+    margin-bottom: 0.1em;
 }
 
 .descricao__texto {
     color: var(--cor-secundaria);
-    font-weight: 400;
-    line-height: 150%;
-    width: 85%;
 }
 
 .botao_terciario {
-    width: 20%;
+    display: inline-block;
     margin-top: 1em;
-    margin-left: 0em;
 }
 
-.dispositivos {
-    height: 35vh;
-    margin: 10em 0 0 0;
-    text-align: center;
-}
-
-.dispositivos__titulo {
-    font-weight: 700;
-    font-size: 3em;
-    color: var(--cor-primaria);
+.container__descricao {
+    padding: 2em;
 }
 
 .dispositivos__lista {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 3em 0;
-    gap: 5em;
+    margin: 5em 0;
+}
+
+.dispositivos {
+    text-align: center;
+}
+
+.dispositivos__titulo {
+    font-size: 48px;
+    color: var(--cor-primaria);
 }
 
 .lista__item {
-    font-weight: 700;
-    font-size: 2em;
+    font-size: 32px;
     color: var(--cor-primaria);
 }
 
 .rodape {
-    height: 35vh;
     text-align: center;
-    margin: 8em 0 0 0;
+    margin: 5em 3em;
 }
 
 .rodape__logo {
-    width: 6%;
+    margin-bottom: 1em;
 }
 
 .rodape__lista {
     display: flex;
     justify-content: center;
-    list-style: none;
-    margin: 3em 0 1em 0;
-    gap: 1em;
+    list-style-type: none;
+    margin-bottom: 1em;
 }
 
 .lista__link a{
-    font-size: 1.1em;
-    font-weight: 400;
     text-decoration: none;
     color: var(--cor-primaria);
+    margin-left: 1em;
+}
+
+.rodape__texto {
+    color: var(--cor-secundaria);
+    margin: 1em 0;
+    font-size: 14px;
 }
 
 .lista__link a:hover {
     color: var(--cor-botao);
 }
 
-.rodape__texto {
+.container__botao:hover {
+    background-color: var(--cor-botao-efeito);
     color: var(--cor-secundaria);
-    font-weight: 400;
-    line-height: 150%;
-    padding: 1em;
-    margin: 0 0 0 20.5em;
-    width: 66%;
+}
+
+.botao_secundario:hover {
+    background-color: transparent;
+    border-color: var(--cor-secundaria);
+}
+
+@media screen and (max-width: 728px){
+    .container {
+        display: block;
+        background-image: none;
+    }
+
+    .container__imagem {
+        width: 50vw;
+    }
+
+    .container__caixa {
+        margin: 2em 2em;
+    }
+
+    .secundario {
+        margin: 0;
+        text-align: center;
+    }
+
+    .imagem__secundaria {
+        width: 50vw;
+    }
+
+    .descricao__titulo {
+        font-size: 32px;
+    }
+    .dispositivos__lista {
+        display: block;
+    }
+
+    .dispositivos__titulo {
+        font-size: 32px;
+    }
+
+    .lista__item {
+        font-size: 28px;
+    }
+
+    .rodape__logo {
+        margin-left: 0.5em;
+    }
+
+    .rodape__lista {
+        display: block;
+    }
+
+    .lista__link a {
+        margin: 0;
+    }
+    .rodape__texto {
+        font-size: 12px;
+    }
 }
